@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% block title %}
+Projects
+{% endblock title %}
+{% block body %}
+{% load static %}
+
+<style>
+  .jumbotron {
+    position: relative;
+    background-color: #03001C;
+    z-index: -111;
+  }
+    .jumbotron p{
+        color: #D4FAFC;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .jumbotron h1{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+    .b2{
+      background-color: #e81752;
+      color: #fff;
+  }
+  .b2:hover{
+      background-color: #ba1345;
+      color: #fff;
+  }
+  .fl:hover{
+    transform: scale(1.07);
+    transition: 0.5s;
+  }
+  .card{
+    border:none;
+    border-radius: 10px;
+    background:inherit;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 3px 0 ;
+  }
+
+  .card-img-top{
+    height: 200px;
+  }
+
+  .card-text{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+  }
+
+  strong{
+    color: #9AC5F4;
+    font-style: normal;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media only screen and (max-width: 360px){
+    .jumbotron p{
+        font-size: 12px;
+    }
+    .jumbotron h1{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 17px;
+    }
+    p{
+        font-size: 12px;
+    }
+    * {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      -ms-transition: none !important;
+      transition: none !important;
+     }
+    }
+</style>
+
+<main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Project Gallery</h1>
+        <p class="lead text-muted">Discover Brilliant Innovations: Explore My Project Gallery Showcasing Creative Solutions and Inspiring Ideas!</p>
+        <p>
+          <a href="{% static 'resu.pdf' %}" class="btn b2 my-2" download="Aniruddha_Jana">Download Resume</a>
+          <a href="/contact" class="btn btn-primary my-2">Get in Touch</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 fl">
+            <div class="card mb-4">
+              <img class="card-img-top" src="{% static 'prj1.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>ForHeart: </strong>We have made a tool for the prediction of Heart Attacks using the Machine Learning Model.The website will take input parameters related to their health like blood pressure, the occurrence of chest pain, etc. from the user, and based on it, will provide the output from our model on the website.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/ForHeart'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj2.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>DrLeaf: </strong> It not only makes the work easier but also reduces the effort and expenditure of the farmer to identify the disease and its treatment methods. We have to upload the image of an affected plant's leaf through our website and our plant disease prediction model predicts and returns the disease name.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/DrLeaf'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj3.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>GCVB: </strong>It is a software program, with which you can control Volume and Brightness levels in a Laptop or PC installed with a webcam. It can be done using simple hand gestures from a certain distance and the intensity levels can be controlled by the distance between the index finger and thumb.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/gesture_control'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj4.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>MLANPR: </strong>It is a technology that uses computer vision and image processing techniques to automatically identify and recognize license plate numbers from images or video footage. This system have been developed to recognize license plates in various languages including Hindi, Tamil, Bengali, Telugu, Kannada.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/MLANPR'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj5.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>Sentiment Analysis XB: </strong>It is a powerful tool for understanding how people feel about a particular topic. The approach is used to construct a pipeline that divides the incoming text into seven groups for sentiment analysis. i.e, Weakly -ve, -ve, Strongly -ve, Neutral, Weakly +ve, +ve and Strongly +ve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/Sentiment-Analysis-XB'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj6.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>Plant.iot: </strong>An IoT-based system that collects real-time data from soil and plants using Arduino, stores it in Firebase and processes it using a Python-based web app. The system provides farmers with insights into soil and plant health, helping them make informed decisions and optimize their farming practices.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/Plant2iot'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj7.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>MCG-51: </strong>A Morse code generator using the 8051 microcontroller is a simple yet effective communication device. The microcontroller receives the input message, processes it character by character, and then generates the corresponding Morse code patterns and transmits the encrypted data using the GSM.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj8.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>Obstacle-avoiding robot: </strong>It senses and overcomes obstacles on its path. This robot has intelligence to cover the max. area of max. space. It has an ultrasonic sensor that is used to sense the obstacles coming in between the path of robot. It will move in a particular direction and avoid the obstacle which is coming in its path.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='https://github.com/AniruddhA-Omni/Obstacle-avoiding-r-car'">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 fl">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{% static 'prj9.jpeg' %}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><strong>AutoMX: </strong>It is an automated machine learning tool that automates the process of selecting the best model and hyperparameters for a given dataset. AutoMX is an implementation of AutoML for quick model generation and model comparison. It can be used for both classification and regression tasks.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                     
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+{% endblock body %}

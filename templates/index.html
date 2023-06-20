@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock title %}
+{% load static %}
+{% block body %}
+<style>
+    body {
+        animation: body 1s linear;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      :root * {
+        /* Pause the animation */
+        animation-play-state: paused;
+
+        /* Bind the animation to scroll */
+        animation-delay: calc(var(--scroll) * -2s);
+
+    /* These last 2 properites clean up overshoot weirdness */
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+      }
+
+    .iam{
+    color: black;
+      font-size: 55px;
+      padding: 15px;
+      font-family: sans-serif;
+  }
+  .text{
+    color: white;
+      border-right: 2px solid red;
+      font-size: 55px;
+      font-family: sans-serif;
+      color: #e81752;
+  }
+
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: blur(10px);
+    z-index: -1;
+  }
+  .jumbotron {
+    background-color: #03001C;
+    position: relative;
+    z-index: -111;
+  }
+    .jumbotron p{
+        color: #D4FAFC;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;';
+    }
+    .jumbotron h1{
+        color: white;
+    }
+    .b2{
+        background-color: #e81752;
+        color: #fff;
+    }
+    .b2:hover{
+        background-color: #ba1345;
+        color: #fff;
+    }
+    h2{
+        color: #e81752!important;
+        font-family: 'Poppins', sans-serif;
+        font-size: 35px;
+    }
+    
+    .rounded-circle{
+        padding: 10px;
+        margin-left: 13vh;
+    }
+    h3{
+        color: #9AC5F4;
+        font-family: 'Roboto', sans-serif;
+    }
+    .progress-bar{
+        background-color: #d67915;
+    }
+    .card{
+        background-color: #301E67;
+    }
+    .fk strong{
+        color: #9AC5F4;
+    }
+    form label{
+        color: #9AC5F4;
+        font-weight: bold;
+    }
+
+    .pf{
+        margin:0;
+        padding-bottom: 15vh;
+        height: 70vh;
+    }
+    .ck{
+        border:none;
+        border-radius: 10px;
+        background:inherit;
+        backdrop-filter: blur(3px);
+    }
+    @media only screen and (max-width: 600px) {
+        .d-flex{
+            flex-direction: column;
+        }
+        :root *{
+            animation-play-state: running;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+        .iam{
+            font-size: 25px;
+        }
+        .text{
+            font-size: 25px;
+        }
+        .jumbotron p{
+            font-size: 12px;
+        }
+        .jumbotron h1{
+            font-size: 25px;
+        }
+        h3{
+            font-size: 17px;
+        }
+        p{
+            font-size: 12px;
+        }
+        .d-flex{
+            align-items: center;
+            font-size: 12px;
+        }
+        form label{
+            
+        }
+    }
+
+</style>
+<div class="jumbotron text-center">
+    <h1 class="display-4 iam">I'm</h1> 
+    <span class="text"></span>
+    <p class="lead">Welcome to my website! I'm Aniruddha Jana, and I love learning and exploring new things. Let's embark on this exciting journey together, where we can inspire others, make connections, and leave a positive mark on the world. Join me and let's explore the endless possibilities!
+    </p>
+    <hr class="my-4">
+    <p><em>"I am a lifelong learner, constantly seeking opportunities to expand my knowledge and skills."
+    </em></p>
+    <p class="lead">
+        <a href="{% static 'resu.pdf' %}" class="btn b2 my-2" download="Aniruddha_Jana">Download Resume</a>
+        <a href="https://www.linkedin.com/in/aniruddha-jana-aj/" class="btn btn-primary my-2">Connect</a>
+    </p>
+</div>
+<section id="aboutme" class="animate__animated animate__slideInLeft animate__faster">
+<!-- flex conatiner with picture on left side and text on right side -->
+<h2 class="text-center">About Me</h2>
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{% static 'pf_wob.png' %}" alt="placeholder" class="img-fluid rounded-circle mb-3 mb-md-0 pf">
+            </div>
+            <div class="col-md-6">
+                <p>I am <strong>Aniruddha Jana</strong>, a <em>final year</em> student studying <em>Electronics and Communication Engineering</em> at <strong>VIT, Vellore.</strong> 
+                    I am interested in learning more about <em>Image Processing, Computer Vision, Machine Learning, and IoT</em> and I want to enhance my knowledge in these fields through experience. I want expertise in the field of Image processing.</p>
+                <p><strong>Python</strong> and <strong>C/C++</strong>languages are the programming languages that I use most for making projects.While I can also code in <strong>Java</strong>. I have also worked with <em>HTML, CSS, and JavaScript</em> for making websites. I have also worked with <strong>MySQL</strong> for making databases.</p>
+                <p>I have experience of more than <em>4 years</em> in making machine learning models for various projects. Till now, I have participated in <em> 6 hackathons</em>, out of them I have won two.
+                    I also love teaching the concepts and tricks that I know about a particular subject since I love sharing my knowledge with others.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills" class="my-3 animate__animated animate__slideInRight animate__fast">
+    <h2 class="text-center">Skills</h2>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4 mb-md-0">
+                    <div class="card-body">
+                        <p class="mb-4"><span class="text-light font-italic me-1">Skills</span> 
+                        </p>
+                        <p class="mb-1" style="font-size: .77rem;">C/C++</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">Java</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">Python</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">HTML5 + CSS3 + JS</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">MySQL</p>
+                        <div class="progress rounded mb-2" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 mb-md-0">
+                    <div class="card-body">
+                        <p class="mb-4"><span class="text-light font-italic me-1">Frameworks</span>
+                        </p>
+                        <p class="mb-1" style="font-size: .77rem;">Tensorflow</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">OpenCV</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">Arduino + Proteus</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">Bootstrap 5</p>
+                        <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-4 mb-1" style="font-size: .77rem;">Django</p>
+                        <div class="progress rounded mb-2" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<section class="Project my-3 animate__animated animate__slideInLeft animate__fast">
+    <h2 class="text-center py-2">Projects</h2>
+    <div class="container marketing">
+
+        <div class="row">
+            <div class="col-lg-4 ck">
+                <img class="rounded-circle"
+                    src="{% static 'prj2.png' %}"
+                    alt="Generic placeholder image" width="140" height="140">
+                <h3>DrLeaf: Plant disease detection Website</h3>
+                <p>Here comes our product DrLeaf which not only makes the work easier but also reduces the effort and expenditure of the farmer to identify the disease and its treatment methods. We have to upload the image of an affected plant’s leaf through our website and our plant disease prediction model predicts and returns the disease name. And along with the disease name, we also provide the best suitable methods to cure the disease.</p>
+            </div>
+            <div class="col-lg-4 ck">
+                <img class="rounded-circle"
+                    src="{% static 'prj1.png' %}"
+                    alt="Generic placeholder image" width="140" height="140">
+                <h3>ForHeart: Live a long life with Good Heart!</h3>
+                <p>We have made a tool for the prediction of Heart Attacks using the Machine Learning Model. We have also made a website for the same. The website will take input parameters related to their health like blood pressure, the occurrence of chest pain, etc. from the user, and based on it, will provide the output (chances of getting a heart attack) from our model on the website.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 ck">
+                <img class="rounded-circle"
+                    src="{% static 'prj8.png' %}"
+                    alt="Generic placeholder image" width="140" height="140">
+                <h3>Arduino Obstacle Avoiding Robot</h3>
+                <p>An obstacle-avoiding robot is an intelligent device, which can automatically sense and overcome obstacles on its path. This ROBOT has sufficient intelligence to cover the maximum area of maximum space. It has an ultrasonic sensor that is used to sense the obstacles coming in between the path of ROBOT. It will move in a particular direction and avoid the obstacle which is coming in its path.</p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+        <a href="/project" class="btn btn-primary">Check out Projects</a>
+    </div>
+</section>
+
+
+<section id="contactme" class="my-5 container">
+    <h2 class="text-center">Get in Touch</h2>
+    <p class="text-center px-4 my-0"><em>If you have any query or suggestion, please feel free to contact.</em></p>
+    <div class="d-flex py-4 justify-content-center">
+        <div class="fk">
+            
+            <strong>☎️ Contact No.: </strong>
+            <p class="px-4">+91 9007567361</p>
+            <strong>✉️ Email: </strong>
+            <p class="px-4"> aniruddhaj43@gmail.com</p>
+            <strong>📍Location: </strong>
+            <p class="px-4">Kolkata, West Bengal</p>
+        </div>
+
+
+        <form method="post" action="/contact">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="abc@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="phn">Contact number</label>
+                <input type="text" class="form-control" id="phn" name="phn" placeholder="9876543210">
+            </div>
+            <div class="form-group">
+                <label for="desc">What to you want to tell me: </label>
+                <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    var typing=new Typed(".text", {
+        strings: ["", "Aniruddha Jana","Freelancer", "Datascience Enthusiast", "Python Developer", "Machine Learning Engineer", "Competitive Programmer", "Web Developer"],
+        typeSpeed: 100,
+        backSpeed: 40,
+        loop: true,
+        cursorChar: "",
+        contentType: 'html'
+    });
+    window.addEventListener('scroll', () => {
+        document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      }, false);
+ </script>
+ 
+{% endblock body %}
